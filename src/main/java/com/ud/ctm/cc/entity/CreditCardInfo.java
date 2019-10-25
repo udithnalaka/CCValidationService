@@ -12,8 +12,10 @@ public class CreditCardInfo {
 	@NotBlank
 	private String ccNumber;
 
-	@Size(min = 3, max = 3)
+	//@Min(3) @Max(3)
 	private int csv;
+	
+	public CreditCardInfo() {}
 
 	public CreditCardInfo(String customerName, String ccNumber, int csv) {
 		this.customerName = customerName;
