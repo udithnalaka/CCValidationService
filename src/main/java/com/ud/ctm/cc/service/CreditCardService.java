@@ -12,6 +12,6 @@ public interface CreditCardService {
 	 * 
 	 * @return {@link CreditCardDTO}
 	 */
-	CreditCardDTO validateCC(final CreditCardInfo creditCardInfo);
+	CreditCardDTO validateCC(final CreditCardInfo creditCardInfo) throws Exception;
 
 }

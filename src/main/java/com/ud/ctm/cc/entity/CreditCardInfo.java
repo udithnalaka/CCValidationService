@@ -1,5 +1,6 @@
 package com.ud.ctm.cc.entity;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -12,7 +13,7 @@ public class CreditCardInfo {
 	@NotBlank
 	private String ccNumber;
 
-	//@Min(3) @Max(3)
+	@Digits(integer = 3, fraction = 3)
 	private int csv;
 	
 	public CreditCardInfo() {}

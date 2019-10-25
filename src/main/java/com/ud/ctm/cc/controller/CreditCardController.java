@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 /**
- * REST controller for managing Credit Card related functionality
+ * REST controller for managing Credit Card related functionality.
  * 
  * @author udith
  *
@@ -47,12 +47,13 @@ public class CreditCardController {
 	 * @param creditCardInfo {@link CreditCardInfo}
 	 * 
 	 * @return {@link CreditCardDTO}
+	 * @throws Exception 
 	 */
 	@PutMapping(value = "/validate", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiResponses(value = { 
 			@ApiResponse(code = 200, message = "CreditCard number is valid."),
 			@ApiResponse(code = 400, message = "CreditCard number is invalid") })
-	public ResponseEntity<CreditCardDTO> validateCreditCard(@Valid @RequestBody CreditCardInfo creditCardInfo) {
+	public ResponseEntity<CreditCardDTO> validateCreditCard(@Valid @RequestBody CreditCardInfo creditCardInfo) throws Exception {
 		LOGGER.info("validateCreditCard(). CreditCardInfo : {}", creditCardInfo);
 
 		return ResponseEntity.ok(creditCardService.validateCC(creditCardInfo));
